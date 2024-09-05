@@ -36,6 +36,7 @@ const Content = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
+  margin:auto;
 
   @media (max-width: 768px) {
     flex-direction: column;

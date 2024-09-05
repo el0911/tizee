@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 // Styled Components for layout and styling
 const Wrapper = styled.div`
-  display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #1E81CE, #47A7F5);
@@ -13,6 +12,22 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 2rem;
+  }
+
+   h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    width:100%;
+    text-align:center;
+
+    @media (max-width: 768px) {
+      font-size: 3.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -32,7 +47,7 @@ const Card = styled(motion.div)`
   padding: 2rem;
   flex: 1;
   margin: 0 1rem;
-  text-align: center;
+  text-align: left;
   color: white;
   backdrop-filter: blur(10px);
   max-width: 350px;
@@ -43,7 +58,7 @@ const Card = styled(motion.div)`
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: white;
 
@@ -57,7 +72,8 @@ const Card = styled(motion.div)`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 16px;
+        font-family: __Ubuntu_487f76;
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -83,6 +99,9 @@ const cardVariants = {
 const WhyUseTicZee = () => {
   return (
     <Wrapper>
+      <h2>
+      Why Use TicZee.
+      </h2>
       <Content>
         {/* First Card */}
         <Card

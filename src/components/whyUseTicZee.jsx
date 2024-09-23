@@ -111,8 +111,8 @@ const WhyUseTicZee = () => {
           animate="visible"
           transition={{ delay: 0.1 }}
         >
-          <h1>1.</h1>
-          <p>Engage your fans, followers, and customers through captivating prize competitions.</p>
+          <h1>Monetise Your Products or Experiences with Ease</h1>
+          <p>Create and run your own customized competitions with full control over ticket limits, prices, deadlines, and prizes. Whether you’re a small business or an individual, Ticzee lets you tailor every aspect to suit your audience and maximize your revenue</p>
         </Card>
 
         {/* Second Card */}
@@ -122,8 +122,11 @@ const WhyUseTicZee = () => {
           animate="visible"
           transition={{ delay: 0.3 }}
         >
-          <h1>2.</h1>
-          <p>Run successful raffles with features like unlimited entrants & promotional bundles.</p>
+          <h1>Monetise Your Products or Experiences with Ease
+          And below it</h1>
+          <p>Turn your products or services into revenue-generating competitions without the hassle. Ticzee provides an easy-to-use platform where you can effortlessly launch and manage competitions that convert your audience’s interest into profit.</p>
+
+
         </Card>
 
         {/* Third Card */}
@@ -133,8 +136,8 @@ const WhyUseTicZee = () => {
           animate="visible"
           transition={{ delay: 0.5 }}
         >
-          <h1>3.</h1>
-          <p>Increase visibility by featuring your competition on our website (paid feature).</p>
+          <h1> Flexible, Scalable, and Designed for Growth</h1>
+          <p>Whether you’re just starting out or want to scale your business, Ticzee’s platform grows with you. From flexible competition settings to advanced promotional tools, you can expand your reach, build your audience, and create competitions that stand out.</p>
         </Card>
       </Content>
     </Wrapper>

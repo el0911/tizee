@@ -149,10 +149,10 @@ const TicZeeBanner =  ({openModal}:any) => {
     <SectionContainer   bgImage="/headerBack.png">
       <SectionChild>
         <LeftContent>
-          <Heading>Want it, Win it, Give it.</Heading>
+          <Heading>Create. Compete. Win.</Heading>
           <SubHeading>
-            Join our waiting list & turn your products or experiences into prizes.
-            Prizes to revenue, simple as that.
+            <br></br>
+            Join the waiting list and turn your products or services into customizable competitions that drive revenue. Ready to create, compete, and win?
           </SubHeading>
           <SubmitButton  
           onClick={openModal}

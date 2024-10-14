@@ -1,8 +1,8 @@
-
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Image from 'next/image'
+
 const HowItWorksContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -87,7 +87,7 @@ const JoinButton = styled(motion.button)`
   }
 `;
 
-const HowItWorks = ({openModal}:any) => {
+const HowItWorksParticipants = ({openModal}:any) => {
     return (
         <HowItWorksContainer>
             <ImageContainer>
@@ -95,7 +95,7 @@ const HowItWorks = ({openModal}:any) => {
                     src="/howItWorks.png"
                     width={500}
                     height={768}
-                    alt="Car dashboard"
+                    alt="Participant browsing competitions"
                 />
             </ImageContainer>
 
@@ -104,33 +104,32 @@ const HowItWorks = ({openModal}:any) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2>How It Works -Waiting List.</h2>
+                <h2>How It Works - For Participants</h2>
 
                 <div style={{
                     marginLeft:'50px'
                 }}>
                     <div className="step">
-                        <h3>Join Waiting List</h3>
-                        <p>Sign up today by entering your email, and be among the first to experience Ticzee’s platform. Whether you want to host your own competitions or enter to win amazing prizes, we’ll notify you as soon as we launch</p>
+                        <h3>Browse Competitions</h3>
+                        <p>Explore a wide range of exciting competitions across categories like electronics, cars, experiences, and more. New competitions are added regularly, giving you plenty of chances to win!</p>
                     </div>
 
                     <div className="step">
-                        <h3>Get Early Access.</h3>
-                        <p>As a member of our exclusive waiting list, you’ll receive early access to host competitions or enter them before the general public. Plus, you’ll be eligible for special launch promotions and giveaways!</p>
+                        <h3>Choose and Enter</h3>
+                        <p>Pick your favorite competition, purchase your tickets, and get ready to compete for the prize. You can buy as many or as few tickets as you want to increase your chances.</p>
                     </div>
 
                     <div className="step">
-                        <h3>Be the First to Know</h3>
-                        <p>We’ll keep you updated with exciting news, sneak peeks, and tips on how to maximize your experience on Ticzee. Watch your inbox for insider updates!</p>
+                        <h3>Wait for the Results</h3>
+                        <p>Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!</p>
                     </div>
 
                     <JoinButton
-                              onClick={openModal}
-
+                        onClick={openModal}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Join Now
+                        Start Participating
                     </JoinButton>
                 </div>
             </TextContainer>
@@ -138,4 +137,4 @@ const HowItWorks = ({openModal}:any) => {
     );
 };
 
-export default HowItWorks;
+export default HowItWorksParticipants;

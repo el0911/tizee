@@ -20,7 +20,7 @@ const App = () => {
       <HowItWorks reverse openModal={() => setModalOpen(true)}  ></HowItWorks>
       <HowItWorksHosts  openModal={() => setModalOpen(true)}  ></HowItWorksHosts>
       <HowItWorksParticipants  openModal={() => setModalOpen(true)}  ></HowItWorksParticipants>
-      <FooterLinks></FooterLinks>
+      {/* <FooterLinks></FooterLinks> */}
       <WaitlistComponent isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
     </div>
       

@@ -45,8 +45,13 @@ const TextContainer = styled(motion.div)`
     }
   }
 
+  .stepdad{
+     marginLeft:50px
+     }
+
   .step {
     margin-bottom: 2rem;
+    padding-left: 2rem;
 
     h3 {
       font-size: 1.5rem;
@@ -63,8 +68,14 @@ const TextContainer = styled(motion.div)`
   @media (max-width: 768px) {
     padding-left: 0;
     text-align: center;
+
+     .step {
+    margin-bottom: 0; 
+    padding-left:0
+      }
   }
 `;
+
 
 const JoinButton = styled(motion.button)`
   background: linear-gradient(90deg, #007bff, #00c6ff);
@@ -106,9 +117,7 @@ const HowItWorks = ({openModal}:any) => {
             >
                 <h2>How It Works -Waiting List.</h2>
 
-                <div style={{
-                    marginLeft:'50px'
-                }}>
+                <div  className="stepdad">
                     <div className="step">
                         <h3>Join Waiting List</h3>
                         <p>Sign up today by entering your email, and be among the first to experience Ticzee’s platform. Whether you want to host your own competitions or enter to win amazing prizes, we’ll notify you as soon as we launch</p>

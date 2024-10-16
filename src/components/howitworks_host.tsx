@@ -45,8 +45,12 @@ const TextContainer = styled(motion.div)`
     }
   }
 
+  .stepdad{
+      }
+
   .step {
     margin-bottom: 2rem;
+    padding-right: 2rem;
 
     h3 {
       font-size: 1.5rem;
@@ -61,10 +65,15 @@ const TextContainer = styled(motion.div)`
   }
 
   @media (max-width: 768px) {
-    padding-left: 0;
+    padding-right: 0;
     text-align: center;
+margin-bottom: 20px; 
+    .step {
+     padding-right: 0;
+      }
   }
 `;
+
 
 const JoinButton = styled(motion.button)`
   background: linear-gradient(90deg, #007bff, #00c6ff);
@@ -99,9 +108,7 @@ const HowItWorksHosts = ({ openModal }: any) => {
       >
         <h2>How It Works - For Hosts</h2>
 
-        <div style={{
-          marginLeft: '50px'
-        }}>
+        <div className="stopdad">
           <div className="step">
             <h3>Create Your Competition</h3>
             <p>{"Sign up to host your own competition. Choose your prize (whether it's a product, service, or experience), set the ticket price, the number of tickets, and the competition deadline. You have full control over every aspect."}</p>

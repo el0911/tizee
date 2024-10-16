@@ -45,8 +45,13 @@ const TextContainer = styled(motion.div)`
     }
   }
 
+  .stepdad{
+     marginLeft:50px
+     }
+
   .step {
     margin-bottom: 2rem;
+    padding-left: 2rem;
 
     h3 {
       font-size: 1.5rem;
@@ -63,6 +68,11 @@ const TextContainer = styled(motion.div)`
   @media (max-width: 768px) {
     padding-left: 0;
     text-align: center;
+
+    .step {
+    margin-bottom: 0; 
+    padding-left:0
+      }
   }
 `;
 
@@ -106,9 +116,7 @@ const HowItWorksParticipants = ({openModal}:any) => {
             >
                 <h2>How It Works - For Participants</h2>
 
-                <div style={{
-                    marginLeft:'50px'
-                }}>
+                <div className="stepdad">
                     <div className="step">
                         <h3>Browse Competitions</h3>
                         <p>Explore a wide range of exciting competitions across categories like electronics, cars, experiences, and more. New competitions are added regularly, giving you plenty of chances to win!</p>

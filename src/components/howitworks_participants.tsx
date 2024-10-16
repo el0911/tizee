@@ -121,7 +121,7 @@ const HowItWorksParticipants = ({openModal}:any) => {
 
                     <div className="step">
                         <h3>Wait for the Results</h3>
-                        <p>Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!</p>
+                        <p>{"Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!"}</p>
                     </div>
 
                     <JoinButton

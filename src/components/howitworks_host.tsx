@@ -104,22 +104,22 @@ const HowItWorksHosts = ({ openModal }: any) => {
         }}>
           <div className="step">
             <h3>Create Your Competition</h3>
-            <p>Sign up to host your own competition. Choose your prize (whether it's a product, service, or experience), set the ticket price, the number of tickets, and the competition deadline. You have full control over every aspect.</p>
+            <p>{"Sign up to host your own competition. Choose your prize (whether it's a product, service, or experience), set the ticket price, the number of tickets, and the competition deadline. You have full control over every aspect."}</p>
           </div>
 
           <div className="step">
             <h3>Promote Your Competition</h3>
-            <p>Easily share your competition with your audience through social media, email, or even our built-in promotional tools. Drive engagement with your followers and customers to maximize ticket sales.</p>
+            <p>{"Easily share your competition with your audience through social media, email, or even our built-in promotional tools. Drive engagement with your followers and customers to maximize ticket sales"}.</p>
           </div>
 
           <div className="step">
             <h3>Watch the Entries Roll In</h3>
-            <p>As participants purchase tickets, you'll be able to track entries in real-time through your dashboard. The more entries, the higher the prize pot for your competition.</p>
+            <p>{"As participants purchase tickets, you'll be able to track entries in real-time through your dashboard. The more entries, the higher the prize pot for your competition."}</p>
           </div>
 
           <div className="step">
             <h3>Reward the Winner</h3>
-            <p>Once the competition ends, the winner is automatically selected, and you're notified to fulfill the prize. It's that simple!</p>
+            <p>{"Once the competition ends, the winner is automatically selected, and you're notified to fulfill the prize. It's that simple!"}</p>
           </div>
 
           <JoinButton

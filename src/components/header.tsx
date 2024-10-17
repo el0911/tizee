@@ -106,9 +106,9 @@ const Header = () => {
 
         {/* Desktop and mobile navigation */}
         <Nav className={mobileOpen ? "mobile" : ""}>
-          <NavItem href="#">HOME</NavItem>
-          <NavItem href="#">COMPETITIONS</NavItem>
-          <NavItem href="#">WAITING LIST</NavItem>
+          <NavItem href="/">HOME</NavItem>
+          <NavItem href="/participants">PARTICIPANTS</NavItem>
+          <NavItem href="/host">HOST</NavItem>
         </Nav>
 
         {/* Mobile Menu Toggle Icon */}

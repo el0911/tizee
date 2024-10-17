@@ -101,7 +101,7 @@ const WhyUseTicZee = () => {
   return (
     <Wrapper>
       <h2>
-      Why Use TicZee.
+      Why Use TicZee?
       </h2>
       <Content>
         {/* First Card */}
@@ -111,8 +111,8 @@ const WhyUseTicZee = () => {
           animate="visible"
           transition={{ delay: 0.1 }}
         >
-          <h1>Monetise Your Products or Experiences with Ease</h1>
-          <p>Create and run your own customized competitions with full control over ticket limits, prices, deadlines, and prizes. Whether you’re a small business or an individual, Ticzee lets you tailor every aspect to suit your audience and maximize your revenue</p>
+          <h1>Complete control over your competitions</h1>
+          <p>Create and run your own customized competitions with full control over ticket limits, prices, deadlines, and prizes. Whether you’re a small business or an individual, Ticzee lets you tailor every aspect to suit your audience and maximize your revenue.</p>
         </Card>
 
         {/* Second Card */}
@@ -122,8 +122,7 @@ const WhyUseTicZee = () => {
           animate="visible"
           transition={{ delay: 0.3 }}
         >
-          <h1>Monetise Your Products or Experiences with Ease
-          And below it</h1>
+          <h1>Monetise Your Products or Experiences with Ease</h1>
           <p>Turn your products or services into revenue-generating competitions without the hassle. Ticzee provides an easy-to-use platform where you can effortlessly launch and manage competitions that convert your audience’s interest into profit.</p>
 
 

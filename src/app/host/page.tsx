@@ -13,14 +13,15 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="font-sans">
-      <TicZeeBanner  openModal={() => setModalOpen(true)} ></TicZeeBanner>
-      <WhyUseTicZee></WhyUseTicZee>
-      <WhyUseTicZeeTwo></WhyUseTicZeeTwo>
-      <HowItWorks reverse openModal={() => setModalOpen(true)}  ></HowItWorks>
-      {/* <HowItWorksHosts  openModal={() => setModalOpen(true)}  ></HowItWorksHosts> */}
-      {/* <HowItWorksParticipants  openModal={() => setModalOpen(true)}  ></HowItWorksParticipants> */}
-      {/* <FooterLinks></FooterLinks> */}
+    <div className="font-sans"  style={{
+        height: '100vh',
+        width: '100vw',
+        background: '#1c1c1c',
+        paddingTop: '100px'
+    
+    }}>
+       <HowItWorksHosts  openModal={() => setModalOpen(true)}  ></HowItWorksHosts>
+          {/* <FooterLinks></FooterLinks> */}
       <WaitlistComponent isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
     </div>
       

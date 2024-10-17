@@ -73,7 +73,6 @@ const TextContainer = styled.div`
 
   p {
     font-weight: lighter;
-    font-family:'__Ubuntu_487f76';
     font-size: 1rem;
     line-height: 1.5;
     margin-top: 1rem;

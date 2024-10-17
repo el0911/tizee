@@ -111,7 +111,7 @@ const HowItWorksHosts = ({ openModal }: any) => {
         <div className="stopdad">
           <div className="step">
             <h3>Create Your Competition</h3>
-            <p>{"Sign up to host your own competition. Choose your prize (whether it's a product, service, or experience), set the ticket price, the number of tickets, and the competition deadline. You have full control over every aspect."}</p>
+            <p>{"Sign up to host your own competition. Choose your prize (whether it's a product, service, or experience) set the ticket price, the number of tickets, and the competition deadline. You have full control over every aspect."}</p>
           </div>
 
           <div className="step">

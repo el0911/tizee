@@ -68,7 +68,7 @@ const WhyUseTicZee = () => {
           whileHover={{ transform: 'translateY(-10px)' }}
         >
           <h1 style={cardTitleStyle}>Complete control over your competitions</h1>
-          <p style={cardTextStyle}>Create and run your own customized competitions with full control over ticket limits, prices, deadlines, and prizes. Whether you're a small business or an individual, Ticzee lets you tailor every aspect to suit your audience and maximize your revenue.</p>
+          <p style={cardTextStyle}>{"Create and run your own customized competitions with full control over ticket limits, prices, deadlines, and prizes. Whether you're a small business or an individual, Ticzee lets you tailor every aspect to suit your audience and maximize your revenue."}</p>
         </motion.div>
 
         {/* Second Card */}
@@ -81,7 +81,7 @@ const WhyUseTicZee = () => {
           whileHover={{ transform: 'translateY(-10px)' }}
         >
           <h1 style={cardTitleStyle}>Monetise Your Products or Experiences with Ease</h1>
-          <p style={cardTextStyle}>Turn your products or services into revenue-generating competitions without the hassle. Ticzee provides an easy-to-use platform where you can effortlessly launch and manage competitions that convert your audience's interest into profit.</p>
+          <p style={cardTextStyle}>{`Turn your products or services into revenue-generating competitions without the hassle. Ticzee provides an easy-to-use platform where you can effortlessly launch and manage competitions that convert your audience's interest into profit.`}</p>
         </motion.div>
 
         {/* Third Card */}
@@ -94,7 +94,7 @@ const WhyUseTicZee = () => {
           whileHover={{ transform: 'translateY(-10px)' }}
         >
           <h1 style={cardTitleStyle}>Flexible, Scalable, and Designed for Growth</h1>
-          <p style={cardTextStyle}>Whether you're just starting out or want to scale your business, Ticzee's platform grows with you. From flexible competition settings to advanced promotional tools, you can expand your reach, build your audience, and create competitions that stand out.</p>
+          <p style={cardTextStyle}>{`Whether you're just starting out or want to scale your business, Ticzee's platform grows with you. From flexible competition settings to advanced promotional tools, you can expand your reach, build your audience, and create competitions that stand out.`}</p>
         </motion.div>
       </div>
     </div>

@@ -48,10 +48,10 @@ const HowItWorksHosts = ({ openModal }: any) => {
               Create Your Competition
             </h3>
             <p style={{ color: "#bbbbbb", fontSize: "1rem" }}>
-              Sign up to host your own competition. Choose your prize (whether
+             {` Sign up to host your own competition. Choose your prize (whether
               it's a product, service, or experience), set the ticket price, the
               number of tickets, and the competition deadline. You have full
-              control over every aspect.
+              control over every aspect.`}
             </p>
           </div>
 

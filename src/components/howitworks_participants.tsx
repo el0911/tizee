@@ -70,7 +70,7 @@ const HowItWorksParticipants = ({ openModal }:any) => {
           }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Wait for the Results</h3>
             <p style={{ color: '#bbbbbb', fontSize: '1rem' }}>
-              Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!
+              {`Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!`}
             </p>
           </div>
 

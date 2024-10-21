@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google"; // Importing the font correctly
+// import { Ubuntu } from "next/font/google"; // Importing the font correctly
 import "./globals.css"; // Importing global CSS styles
 import Header from "@/components/header";
 
 // Loading the Ubuntu font family from Google Fonts
-const ubuntu = Ubuntu({ weight:'300',subsets:['latin'],variable:'--font_ubuntu' });
+// const ubuntu = Ubuntu({ weight:'300',subsets:['latin'],variable:'--font_ubuntu' });
 
 export const metadata: Metadata = {
   title: "My Next App", // Updated title for a more descriptive name
@@ -24,7 +24,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
     
-      <body className={ubuntu.className}>
+      <body className={""
+        // ubuntu.className
+        }>
       <Header></Header>
         <main>
         {children}

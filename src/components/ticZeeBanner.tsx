@@ -6,13 +6,13 @@ import Image from 'next/image'
 
 // Container for the entire section
 // Container for the entire section with left-to-right gradient
-const SectionContainer = styled.div<{ bgImage: string }>`
+const SectionContainer = styled.div<{ $bgImage: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
   background: 
     linear-gradient(to right, rgba(1, 1, 1, 1) 30%, rgba(0, 0, 0, 0.7) 70%),
-    url(${props => props.bgImage}) center/cover no-repeat;
+   url(${({ $bgImage }) => $bgImage}) center/cover no-repeat;
   color: white;
   padding: 2rem;
   min-height: 100vh;
@@ -146,7 +146,7 @@ const SubmitButton = styled(motion.button)`
 
 const TicZeeBanner =  ({openModal}:any) => {
   return (
-    <SectionContainer   bgImage="/headerBack.png">
+    <SectionContainer   $bgImage="/headerBack.png">
       <SectionChild>
         <LeftContent>
           <Heading>Create. Compete. Win.</Heading>

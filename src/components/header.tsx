@@ -76,7 +76,8 @@ const MobileMenuIcon = styled.div`
   }
 `;
 
-const Overlay:any = styled.div`
+const Overlay = styled.div<{ $isOpen: boolean }>`
+
   display: none;
   position: fixed;
   top: 0;
@@ -86,7 +87,7 @@ const Overlay:any = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
-    display: ${({ isOpen }:any) => (isOpen ? "block" : "none")};
+    display: ${({ $isOpen }) => ($isOpen ? "block" : "none")};
   }
 `;
 
@@ -118,7 +119,7 @@ const Header = () => {
       </HeaderContainer>
 
       {/* Mobile overlay */}
-      <Overlay isOpen={mobileOpen} onClick={toggleMobileMenu} />
+      <Overlay $isOpen={mobileOpen} onClick={toggleMobileMenu} />
     </>
   );
 };

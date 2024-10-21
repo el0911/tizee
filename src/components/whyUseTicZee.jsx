@@ -46,7 +46,7 @@ const WhyUseTicZee = () => {
 
   const cardTitleStyle = {
     fontSize: '1.5rem',
-    marginBottom: '1rem',
+    marginBottom: '1.01rem',
     color: 'white',
   };
 

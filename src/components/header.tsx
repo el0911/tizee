@@ -1,13 +1,32 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  // Update isMobile state based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -16,7 +35,7 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'transparent',
-        padding: window.innerWidth <= 768 ? '10px 15px' : '35px 25px',
+        padding: isMobile ? '10px 15px' : '35px 25px',
         position: 'absolute',
         zIndex: 10,
         width: '100vw',
@@ -26,55 +45,50 @@ const Header = () => {
 
         {/* Desktop and mobile navigation */}
         <nav style={{
-          display: mobileOpen || window.innerWidth > 768 ? 'flex' : 'none',
+          display: mobileOpen || !isMobile ? 'flex' : 'none',
           gap: '20px',
-          flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
-          position: window.innerWidth <= 768 ? 'absolute' : 'static',
-          top: window.innerWidth <= 768 ? '60px' : 'auto',
-          right: window.innerWidth <= 768 ? '0' : 'auto',
-          backgroundColor: window.innerWidth <= 768 ? '#333' : 'transparent',
-          width: window.innerWidth <= 768 ? '100%' : 'auto',
-          padding: window.innerWidth <= 768 ? '20px' : '0',
+          flexDirection: isMobile ? 'column' : 'row',
+          position: isMobile ? 'absolute' : 'static',
+          top: isMobile ? '60px' : 'auto',
+          right: isMobile ? '0' : 'auto',
+          backgroundColor: isMobile ? '#333' : 'transparent',
+          width: isMobile ? '100%' : 'auto',
+          padding: isMobile ? '20px' : '0',
         }}>
           <a href="/" style={{
             color: 'white',
             textDecoration: 'none',
-            fontSize: window.innerWidth <= 768 ? '20px' : '18px',
-            padding: window.innerWidth <= 768 ? '10px 0' : '0',
-            hover: { color: '#ddd' },
+            fontSize: isMobile ? '20px' : '18px',
+            padding: isMobile ? '10px 0' : '0',
           }}>HOME</a>
           <a href="/participants" style={{
             color: 'white',
             textDecoration: 'none',
-            fontSize: window.innerWidth <= 768 ? '20px' : '18px',
-            padding: window.innerWidth <= 768 ? '10px 0' : '0',
-            hover: { color: '#ddd' },
+            fontSize: isMobile ? '20px' : '18px',
+            padding: isMobile ? '10px 0' : '0',
           }}>PARTICIPANTS</a>
           <a href="/host" style={{
             color: 'white',
             textDecoration: 'none',
-            fontSize: window.innerWidth <= 768 ? '20px' : '18px',
-            padding: window.innerWidth <= 768 ? '10px 0' : '0',
-            hover: { color: '#ddd' },
+            fontSize: isMobile ? '20px' : '18px',
+            padding: isMobile ? '10px 0' : '0',
           }}>HOST</a>
         </nav>
 
         {/* Mobile Menu Toggle Icon */}
         <div onClick={toggleMobileMenu} style={{
-          display: window.innerWidth <= 768 ? 'block' : 'none',
+          display: isMobile ? 'block' : 'none',
           color: 'white',
           fontSize: '24px',
           cursor: 'pointer',
         }}>
-          {/* You can replace this with any menu icon component */}
           {mobileOpen ? 'X' : 'Menu'}
         </div>
       </header>
 
       {/* Mobile overlay */}
-      {mobileOpen && (
+      {mobileOpen && isMobile && (
         <div onClick={toggleMobileMenu} style={{
-          display: window.innerWidth <= 768 ? 'block' : 'none',
           position: 'fixed',
           top: 0,
           left: 0,

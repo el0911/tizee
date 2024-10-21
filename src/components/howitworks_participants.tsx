@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-const HowItWorksParticipants = ({ openModal }:any) => {
+const HowItWorksParticipants = ({ openModal }: any) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Update isMobile based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div style={{
       display: 'flex',
@@ -11,9 +31,10 @@ const HowItWorksParticipants = ({ openModal }:any) => {
       padding: '3rem 5rem',
       backgroundColor: '#1c1c1c',
       color: '#ffffff',
-      flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
+      flexDirection: isMobile ? 'column' : 'row',
     }}>
-      <div style={{ flex: 1, marginBottom: window.innerWidth <= 768 ? '2rem' : '0' }}>
+      {/* Image Section */}
+      <div style={{ flex: 1, marginBottom: isMobile ? '2rem' : '0' }}>
         <Image
           src="/howItWorks.png"
           width={500}
@@ -27,26 +48,27 @@ const HowItWorksParticipants = ({ openModal }:any) => {
         />
       </div>
 
+      {/* Text Section */}
       <motion.div
         style={{
           flex: 1,
-          paddingLeft: window.innerWidth <= 768 ? '0' : '2rem',
-          textAlign: window.innerWidth <= 768 ? 'center' : 'left',
+          paddingLeft: isMobile ? '0' : '2rem',
+          textAlign: isMobile ? 'center' : 'left',
         }}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h2 style={{
-          fontSize: window.innerWidth <= 768 ? '2rem' : '2.5rem',
+          fontSize: isMobile ? '2rem' : '2.5rem',
           marginBottom: '2rem',
-          textAlign: window.innerWidth <= 768 ? 'center' : 'left'
+          textAlign: isMobile ? 'center' : 'left'
         }}>How It Works - For Participants</h2>
 
-        <div style={{ marginLeft: window.innerWidth > 768 ? '50px' : '0' }}>
+        <div style={{ marginLeft: !isMobile ? '50px' : '0' }}>
           <div style={{
             marginBottom: '2rem',
-            paddingLeft: window.innerWidth > 768 ? '2rem' : '0',
+            paddingLeft: !isMobile ? '2rem' : '0',
           }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Browse Competitions</h3>
             <p style={{ color: '#bbbbbb', fontSize: '1rem' }}>
@@ -56,7 +78,7 @@ const HowItWorksParticipants = ({ openModal }:any) => {
 
           <div style={{
             marginBottom: '2rem',
-            paddingLeft: window.innerWidth > 768 ? '2rem' : '0',
+            paddingLeft: !isMobile ? '2rem' : '0',
           }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Choose and Enter</h3>
             <p style={{ color: '#bbbbbb', fontSize: '1rem' }}>
@@ -66,11 +88,11 @@ const HowItWorksParticipants = ({ openModal }:any) => {
 
           <div style={{
             marginBottom: '2rem',
-            paddingLeft: window.innerWidth > 768 ? '2rem' : '0',
+            paddingLeft: !isMobile ? '2rem' : '0',
           }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#ffffff' }}>Wait for the Results</h3>
             <p style={{ color: '#bbbbbb', fontSize: '1rem' }}>
-              Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!
+              {`Once the competition closes, a winner is drawn and announced. If you win, you'll be contacted to claim your prize!`}
             </p>
           </div>
 
@@ -85,9 +107,9 @@ const HowItWorksParticipants = ({ openModal }:any) => {
               fontSize: '1rem',
               fontWeight: 'bold',
               marginTop: '1rem',
-              display: window.innerWidth <= 768 ? 'block' : 'inline-block',
-              marginLeft: window.innerWidth <= 768 ? 'auto' : '0',
-              marginRight: window.innerWidth <= 768 ? 'auto' : '0',
+              display: isMobile ? 'block' : 'inline-block',
+              marginLeft: isMobile ? 'auto' : '0',
+              marginRight: isMobile ? 'auto' : '0',
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

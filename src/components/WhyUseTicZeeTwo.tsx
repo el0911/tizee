@@ -1,141 +1,82 @@
 import React from 'react';
-import styled from 'styled-components';
 import Image from 'next/image'
-// Wrapper for the entire section
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-  background-color: #f7f9fb;
-  font-family: 'Arial', sans-serif;
-
-  @media (max-width: 768px) {
-    padding: 2rem;
-    flex-direction: column;
-  }
-`;
-
-// Container for the content (image and text)
-const Content = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-// Styled component for the image section
-const ImageContainer = styled.div`
-  flex: 1;
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
-`;
-
-
-const TextContainer = styled.div`
-  flex: 1;
-  padding-left: 2rem;
-
-  h2 {
-    font-size: 2.5rem;
-    color: #2b2b2b;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.8rem;
-    }
-
-    span {
-      /* Gradient Text */
-      background: linear-gradient(90deg, #007bff, #00c6ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-  }
-
-  p {
-    font-weight: lighter;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 1rem;
-    color: #4a4a4a;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.9rem;
-    }
-
-     span {
-      /* Gradient Text */
-      background: linear-gradient(90deg, #007bff, #00c6ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-  }
-
-  a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding-left: 0;
-  }
-`;
-
-
 
 const WhyUseTicZeeTwo: React.FC = () => {
+  const wrapperStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '4rem',
+    backgroundColor: '#f7f9fb',
+    fontFamily: "'Arial', sans-serif",
+  };
+
+  const contentStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    maxWidth: '1200px',
+    width: '100%',
+  };
+
+  const imageContainerStyle = {
+    flex: 1,
+  };
+
+  const imageStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '10px',
+  };
+
+  const textContainerStyle = {
+    flex: 1,
+    paddingLeft: '2rem',
+  };
+
+  const headingStyle = {
+    fontSize: '2.5rem',
+    color: '#2b2b2b',
+  };
+
+  const gradientTextStyle = {
+    background: 'linear-gradient(90deg, #007bff, #00c6ff)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
+  };
+
+  const paragraphStyle = {
+    fontWeight: 'lighter',
+    fontSize: '1rem',
+    lineHeight: 1.5,
+    marginTop: '1rem',
+    color: '#4a4a4a',
+  };
+
   return (
-    <Wrapper>
-      <Content>
+    <div style={wrapperStyle}>
+      <div style={contentStyle}>
         {/* Image */}
-        <ImageContainer>
-          <Image width={400} height={400} src="/car.png" alt="Prize Car" />
-        </ImageContainer>
+        <div style={imageContainerStyle}>
+          <Image width={400} height={400} src="/car.png" alt="Prize Car" style={imageStyle} />
+        </div>
 
         {/* Text content */}
-        <TextContainer>
-          <h2>
-            Your <span>prizes</span>, <br /> your <span>revenue</span>.
+        <div style={textContainerStyle}>
+          <h2 style={headingStyle}>
+            Your <span style={gradientTextStyle}>prizes</span>, <br /> your <span style={gradientTextStyle}>revenue</span>.
           </h2>
-          <p>
-            Engage your fans, followers, and customers through captivating prize competitions. Using our platform will build your brand awareness and loyalty through targeted prize competitions, all whilst enabling you to keep up to <span>90%</span> of ticket revenue generated.
+          <p style={paragraphStyle}>
+            Engage your fans, followers, and customers through captivating prize competitions. Using our platform will build your brand awareness and loyalty through targeted prize competitions, all whilst enabling you to keep up to <span style={gradientTextStyle}>90%</span> of ticket revenue generated.
           </p>
-          <p>
-            If you’re not in it, you can’t <span>win it</span>.
+          <p style={paragraphStyle}>
+            If you're not in it, you can't <span style={gradientTextStyle}>win it</span>.
           </p>
-        </TextContainer>
-      </Content>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 };
 

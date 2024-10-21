@@ -8,12 +8,14 @@ import TicZeeBanner from '@/components/ticZeeBanner';
 import WhyUseTicZee from '@/components/whyUseTicZee';
 import WhyUseTicZeeTwo from '@/components/WhyUseTicZeeTwo';
 import React,{useState} from 'react';
+import { StyleSheetManager } from 'styled-components';
+import Head from 'next/head';
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="font-sans">
+    <StyleSheetManager >
       <TicZeeBanner  openModal={() => setModalOpen(true)} ></TicZeeBanner>
       <WhyUseTicZee></WhyUseTicZee>
       <WhyUseTicZeeTwo></WhyUseTicZeeTwo>
@@ -22,7 +24,7 @@ const App = () => {
       {/* <HowItWorksParticipants  openModal={() => setModalOpen(true)}  ></HowItWorksParticipants> */}
       {/* <FooterLinks></FooterLinks> */}
       <WaitlistComponent isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
-    </div>
+    </StyleSheetManager>
       
   );
 };

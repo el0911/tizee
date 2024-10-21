@@ -52,8 +52,7 @@ const WhyUseTicZee = () => {
 
   const cardTextStyle = {
     fontSize: '16px',
-    fontFamily: '__Ubuntu_487f76',
-  };
+   };
 
   return (
     <div style={wrapperStyle}>

@@ -147,7 +147,7 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
 
     setLoading(true);
 
-    data.waitlist_id = parseInt(`${process.env.WAITLIST_API || 20125}`);
+    data.waitlist_id = parseInt(`${process.env.NEXT_PUBLIC_WAITLIST_API || 18435}`);
     data.referral_link = document.URL;
 
     fetch("https://api.getwaitlist.com/api/v1/signup", {

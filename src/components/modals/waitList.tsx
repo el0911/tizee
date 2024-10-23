@@ -126,7 +126,17 @@ const CloseButton = styled(motion.button)`
   cursor: pointer;
 `;
 
-const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: () => void }) => {
+interface WaitlistFormData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  description?: string;
+  waitlist_id?: number;
+  referral_link?: string;
+  note?: string; // We'll use this to store additional user data
+}
+
+const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean; closeModal: () => void }) => {
   const [waitlistData, setWaitlistData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -135,27 +145,53 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
 
-  function submitWaitlist(data: { email: string, waitlist_id?: number, referral_link?: string }) {
-    if (!data.email) {
+  function validateName(name: string) {
+    return name.trim().length >= 2;
+  }
+
+  function submitWaitlist(formData: WaitlistFormData) {
+    // Validate all required fields
+    if (!formData.email) {
       setError("Please enter your email");
       return;
     }
-    if (!validateEmail(data.email)) {
+    if (!validateEmail(formData.email)) {
       setError("Please enter a valid email");
+      return;
+    }
+    if (!validateName(formData.firstName)) {
+      setError("Please enter a valid first name");
+      return;
+    }
+    if (!validateName(formData.lastName)) {
+      setError("Please enter a valid last name");
       return;
     }
 
     setLoading(true);
 
-    data.waitlist_id = parseInt(`${process.env.NEXT_PUBLIC_WAITLIST_API || 18435}`);
-    data.referral_link = document.URL;
+    // Prepare the API data
+    const apiData = {
+      email: formData.email,
+      waitlist_id: parseInt(`${process.env.NEXT_PUBLIC_WAITLIST_API || 18435}`),
+      referral_link: document.URL,
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      // Store additional user data in the note field as JSON
+      metadata:{
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        description: formData.description,
+        email: formData.email,
+      }
+    };
 
     fetch("https://api.getwaitlist.com/api/v1/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(apiData),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -188,6 +224,16 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
     };
   }, [closeModal]);
 
+  const handleSubmit = () => {
+    const formData: WaitlistFormData = {
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      firstName: (document.getElementById("firstName") as HTMLInputElement).value,
+      lastName: (document.getElementById("lastName") as HTMLInputElement).value,
+      description: (document.getElementById("description") as HTMLTextAreaElement).value
+    };
+    submitWaitlist(formData);
+  };
+
   if (!isOpen) return null;
 
   return createPortal(
@@ -204,16 +250,16 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
       >
         <CloseButton onClick={closeModal}>&times;</CloseButton>
         {!waitlistData ? (
-          <form>
-            <Title>Join Waiting List.</Title>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <Title>Join Waiting List</Title>
             <Subtitle>
-             {" Let's get the raffle rolling. Please enter your details & we will respond as soon as we can."}
+              Let's get the raffle rolling. Please enter your details & we will respond as soon as we can.
             </Subtitle>
 
             <Label htmlFor="firstName">First Name</Label>
             <Input
               id="firstName"
-              name="First Name"
+              name="firstName"
               type="text"
               placeholder="Enter your First Name"
               required
@@ -222,7 +268,7 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
             <Label htmlFor="lastName">Last Name</Label>
             <Input
               id="lastName"
-              name="Last Name"
+              name="lastName"
               type="text"
               placeholder="Enter your Last Name"
               required
@@ -248,12 +294,7 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean, closeModal: ()
               type="button"
               whileHover={{ scale: 1.05 }}
               disabled={loading}
-              onClick={() => {
-                submitWaitlist({
-                  email: (document.getElementById("email") as HTMLInputElement)
-                    .value,
-                });
-              }}
+              onClick={handleSubmit}
             >
               {loading ? (
                 <ClipLoader size={25} color={"#0072FF"} loading={true} />

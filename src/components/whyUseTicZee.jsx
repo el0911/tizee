@@ -56,7 +56,7 @@ const WhyUseTicZee = () => {
 
   return (
     <div style={wrapperStyle}>
-      <h2 style={titleStyle}>Why Use TicZee?</h2>
+      <h2 style={titleStyle}>Why Use Launch Competitions?</h2>
       <div style={contentStyle}>
         {/* First Card */}
         <motion.div

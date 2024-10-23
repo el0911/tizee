@@ -100,7 +100,7 @@ const HowItWorks = ({ openModal }: any) => {
               }}
             >
               Sign up today by entering your email, and be among the first to
-              experience Ticzee’s platform. Whether you want to host your own
+              experience Launch Competition's platform. Whether you want to host your own
               competitions or enter to win amazing prizes, we’ll notify you as
               soon as we launch.
             </p>
@@ -156,7 +156,7 @@ const HowItWorks = ({ openModal }: any) => {
               }}
             >
               We’ll keep you updated with exciting news, sneak peeks, and tips
-              on how to maximize your experience on Ticzee. Watch your inbox for
+              on how to maximize your experience on Launch Competition. Watch your inbox for
               insider updates!
             </p>
           </div>

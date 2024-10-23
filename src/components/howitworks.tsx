@@ -100,7 +100,7 @@ const HowItWorks = ({ openModal }: any) => {
               }}
             >
               Sign up today by entering your email, and be among the first to
-              experience Launch Competition's platform. Whether you want to host your own
+              experience Launch Competition’s platform. Whether you want to host your own
               competitions or enter to win amazing prizes, we’ll notify you as
               soon as we launch.
             </p>

@@ -253,7 +253,7 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean; closeModal: ()
           <form onSubmit={(e) => e.preventDefault()}>
             <Title>Join Waiting List</Title>
             <Subtitle>
-              Let's get the raffle rolling. Please enter your details & we will respond as soon as we can.
+             {` Let's get the raffle rolling. Please enter your details & we will respond as soon as we can.`}
             </Subtitle>
 
             <Label htmlFor="firstName">First Name</Label>

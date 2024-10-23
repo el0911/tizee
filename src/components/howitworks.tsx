@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
 const HowItWorks = ({ openModal }: any) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Update isMobile based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div
       style={{
@@ -12,13 +32,13 @@ const HowItWorks = ({ openModal }: any) => {
         padding: "3rem 5rem",
         backgroundColor: "#1c1c1c",
         color: "#ffffff",
-        flexDirection: window.innerWidth <= 768 ? "column" : "row"
+        flexDirection: isMobile ? "column" : "row"
       }}
     >
       <div
         style={{
           flex: 1,
-          marginBottom: window.innerWidth <= 768 ? "2rem" : "0",
+          marginBottom: isMobile ? "2rem" : "0",
         }}
       >
         <Image
@@ -37,8 +57,8 @@ const HowItWorks = ({ openModal }: any) => {
       <motion.div
         style={{
           flex: 1,
-          paddingLeft: window.innerWidth <= 768 ? "0" : "2rem",
-          textAlign: window.innerWidth <= 768 ? "center" : "left",
+          paddingLeft: isMobile ? "0" : "2rem",
+          textAlign: isMobile ? "center" : "left",
         }}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -46,7 +66,7 @@ const HowItWorks = ({ openModal }: any) => {
       >
         <h2
           style={{
-            fontSize: window.innerWidth <= 768 ? "2rem" : "2.5rem",
+            fontSize: isMobile ? "2rem" : "2.5rem",
             marginBottom: "2rem",
           }}
         >
@@ -55,13 +75,13 @@ const HowItWorks = ({ openModal }: any) => {
 
         <div
           style={{
-            marginLeft: "50px",
+            marginLeft: isMobile ? "0" : "50px",
           }}
         >
           <div
             style={{
               marginBottom: "2rem",
-              paddingLeft: window.innerWidth <= 768 ? "0" : "2rem",
+              paddingLeft: isMobile ? "0" : "2rem",
             }}
           >
             <h3
@@ -89,7 +109,7 @@ const HowItWorks = ({ openModal }: any) => {
           <div
             style={{
               marginBottom: "2rem",
-              paddingLeft: window.innerWidth <= 768 ? "0" : "2rem",
+              paddingLeft: isMobile ? "0" : "2rem",
             }}
           >
             <h3
@@ -117,7 +137,7 @@ const HowItWorks = ({ openModal }: any) => {
           <div
             style={{
               marginBottom: "2rem",
-              paddingLeft: window.innerWidth <= 768 ? "0" : "2rem",
+              paddingLeft: isMobile ? "0" : "2rem",
             }}
           >
             <h3
@@ -153,8 +173,8 @@ const HowItWorks = ({ openModal }: any) => {
               fontSize: "1rem",
               fontWeight: "bold",
               marginTop: "1rem",
-              display: window.innerWidth <= 768 ? "block" : "inline-block",
-              margin: window.innerWidth <= 768 ? "1rem auto 0" : "1rem 0 0",
+              display: isMobile ? "block" : "inline-block",
+              margin: isMobile ? "1rem auto 0" : "1rem 0 0",
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

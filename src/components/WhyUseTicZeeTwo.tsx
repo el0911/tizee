@@ -69,10 +69,10 @@ const WhyUseTicZeeTwo: React.FC = () => {
             Your <span style={gradientTextStyle}>prizes</span>, <br /> your <span style={gradientTextStyle}>revenue</span>.
           </h2>
           <p style={paragraphStyle}>
-            Engage your fans, followers, and customers through captivating prize competitions. Using our platform will build your brand awareness and loyalty through targeted prize competitions, all whilst enabling you to keep up to <span style={gradientTextStyle}>90%</span> of ticket revenue generated.
+          {"  Engage your fans, followers, and customers through captivating prize competitions. Using our platform will build your brand awareness and loyalty through targeted prize competitions, all whilst enabling you to keep up to"} <span style={gradientTextStyle}>90%</span> of ticket revenue generated.
           </p>
           <p style={paragraphStyle}>
-            If you're not in it, you can't <span style={gradientTextStyle}>win it</span>.
+           {`If you're not in it, you can't`} <span style={gradientTextStyle}>win it</span>.
           </p>
         </div>
       </div>

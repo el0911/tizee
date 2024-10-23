@@ -320,20 +320,15 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean; closeModal: ()
           >
             <div>
               Thank you for signing up. Your position is{" "}
-              <b>{waitlistData.priority}</b> on the waitlist.
+              <b>{waitlistData.priority}</b> on the waitiing list.
             </div>
-            <div>
-              Referral link: <b>{waitlistData.referral_link}</b>
-            </div>
-            <div>
-              Total referrals: <b>{waitlistData.total_referrals}</b>
-            </div>
+
             <Button
               type="button"
               whileHover={{ scale: 1.05 }}
               onClick={() => setWaitlistData(null)}
             >
-              Return to signup
+              Return to Home
             </Button>
           </SuccessMessage>
         )}

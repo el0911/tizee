@@ -319,16 +319,19 @@ const WaitlistModal = ({ isOpen, closeModal }: { isOpen: boolean; closeModal: ()
             transition={{ delay: 0.3 }}
           >
             <div>
-              Thank you for signing up. Your position is{" "}
-              <b>{waitlistData.priority}</b> on the waitiing list.
+              Thank you for signing up. Your position is {" "}
+              <b>{waitlistData.priority}</b> on the waiting list. 
+              Share your unique referral link below to jump to the front of the line!
             </div>
-
+            <div>
+              Referral link: <b>{waitlistData.referral_link}</b>
+            </div>
             <Button
               type="button"
               whileHover={{ scale: 1.05 }}
               onClick={() => setWaitlistData(null)}
             >
-              Return to Home
+              Return to signup
             </Button>
           </SuccessMessage>
         )}

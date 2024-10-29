@@ -41,7 +41,7 @@ const Header = () => {
         width: '100vw',
       }}>
         {/* Logo */}
-        <Image width={100} height={100} src={'/TicZee..png'} alt={""}></Image>
+        <Image width={100} height={100} src={'/image.png'} alt={""}></Image>
 
         {/* Desktop and mobile navigation */}
         <nav style={{

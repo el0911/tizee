@@ -45,7 +45,7 @@ const WhyUseTicZeeTwo = () => {
           </p>
 
           <p className="text-[#4a4a4a] text-base md:text-lg font-light leading-relaxed">
-            If you're not in it, you can't{' '}
+           {" If you're not in it, you can't"}{' '}
             <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent font-medium">
               win it
             </span>

@@ -1,80 +1,55 @@
 import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 
-const WhyUseTicZeeTwo: React.FC = () => {
-  const wrapperStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '4rem',
-    backgroundColor: '#f7f9fb',
-    fontFamily: "'Arial', sans-serif",
-  };
-
-  const contentStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    maxWidth: '1200px',
-    width: '100%',
-  };
-
-  const imageContainerStyle = {
-    flex: 1,
-  };
-
-  const imageStyle = {
-    maxWidth: '100%',
-    height: 'auto',
-    borderRadius: '10px',
-  };
-
-  const textContainerStyle = {
-    flex: 1,
-    paddingLeft: '2rem',
-  };
-
-  const headingStyle = {
-    fontSize: '2.5rem',
-    color: '#2b2b2b',
-  };
-
-  const gradientTextStyle = {
-    background: 'linear-gradient(90deg, #007bff, #00c6ff)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    textFillColor: 'transparent',
-  };
-
-  const paragraphStyle = {
-    fontWeight: 'lighter',
-    fontSize: '1rem',
-    lineHeight: 1.5,
-    marginTop: '1rem',
-    color: '#4a4a4a',
-  };
-
+const WhyUseTicZeeTwo = () => {
   return (
-    <div style={wrapperStyle}>
-      <div style={contentStyle}>
-        {/* Image */}
-        <div style={imageContainerStyle}>
-          <Image width={400} height={400} src="/car.png" alt="Prize Car" style={imageStyle} />
+    <div className="flex items-center justify-center bg-[#f7f9fb] px-4 py-16 font-sans">
+      <div className="flex max-w-6xl w-full flex-col md:flex-row items-center justify-between gap-8">
+        {/* Image Container */}
+        <div className="w-full md:w-1/2">
+          <div className="relative w-full max-w-md mx-auto">
+            <Image
+              width={400}
+              height={400}
+              src="/car.png"
+              alt="Prize Car"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
         </div>
 
-        {/* Text content */}
-        <div style={textContainerStyle}>
-          <h2 style={headingStyle}>
-            Your <span style={gradientTextStyle}>prizes</span>, <br /> your <span style={gradientTextStyle}>revenue</span>.
+        {/* Text Content */}
+        <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#2b2b2b] font-bold">
+            Your{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              prizes
+            </span>
+            , <br />
+            your{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              revenue
+            </span>
+            .
           </h2>
-          <p style={paragraphStyle}>
-          {"  Engage your fans, followers, and customers through captivating prize competitions. Using our platform will build your brand awareness and loyalty through targeted prize competitions, all whilst enabling you to keep up to"} <span style={gradientTextStyle}>90%</span> of ticket revenue generated.
+          
+          <p className="text-[#4a4a4a] text-base md:text-lg font-light leading-relaxed">
+            Engage your fans, followers, and customers through captivating prize
+            competitions. Using our platform will build your brand awareness and
+            loyalty through targeted prize competitions, all whilst enabling you to
+            keep up to{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent font-medium">
+              90%
+            </span>{' '}
+            of ticket revenue generated.
           </p>
-          <p style={paragraphStyle}>
 
-           {`If you're not in it, you can't`} <span style={gradientTextStyle}>win it</span>.
-
+          <p className="text-[#4a4a4a] text-base md:text-lg font-light leading-relaxed">
+            If you're not in it, you can't{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent font-medium">
+              win it
+            </span>
+            .
           </p>
         </div>
       </div>

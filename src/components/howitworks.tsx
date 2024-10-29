@@ -26,95 +26,6 @@ const HowItWorks = ({ openModal }: any) => {
           How It Works
         </h2>
 
-<<<<<<< HEAD
-        <div
-          style={{
-            marginLeft: isMobile ? "0" : "50px",
-          }}
-        >
-          <div
-            style={{
-              marginBottom: "2rem",
-              paddingLeft: isMobile ? "0" : "2rem",
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "0.5rem",
-                color: "#ffffff",
-              }}
-            >
-              Join Waiting List
-            </h3>
-            <p
-              style={{
-                color: "#bbbbbb",
-                fontSize: "1rem",
-              }}
-            >
-              Sign up today by entering your email, and be among the first to
-              experience Launch Competition’s platform. Whether you want to host your own
-              competitions or enter to win amazing prizes, we’ll notify you as
-              soon as we launch.
-            </p>
-          </div>
-
-          <div
-            style={{
-              marginBottom: "2rem",
-              paddingLeft: isMobile ? "0" : "2rem",
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "0.5rem",
-                color: "#ffffff",
-              }}
-            >
-              Get Early Access.
-            </h3>
-            <p
-              style={{
-                color: "#bbbbbb",
-                fontSize: "1rem",
-              }}
-            >
-              As a member of our exclusive waiting list, you’ll receive early
-              access to host competitions or enter them before the general
-              public. Plus, you’ll be eligible for special launch promotions and
-              giveaways!
-            </p>
-          </div>
-
-          <div
-            style={{
-              marginBottom: "2rem",
-              paddingLeft: isMobile ? "0" : "2rem",
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "0.5rem",
-                color: "#ffffff",
-              }}
-            >
-              Be the First to Know
-            </h3>
-            <p
-              style={{
-                color: "#bbbbbb",
-                fontSize: "1rem",
-              }}
-            >
-              We’ll keep you updated with exciting news, sneak peeks, and tips
-              on how to maximize your experience on Launch Competition. Watch your inbox for
-              insider updates!
-            </p>
-          </div>
-=======
         <div className="md:ml-12">
           {[
             {
@@ -139,7 +50,6 @@ const HowItWorks = ({ openModal }: any) => {
               </p>
             </div>
           ))}
->>>>>>> d404419 (fixed ui issues)
 
           <motion.button
             onClick={openModal}

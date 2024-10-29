@@ -7,8 +7,8 @@ import Header from "@/components/header";
 // const ubuntu = Ubuntu({ weight:'300',subsets:['latin'],variable:'--font_ubuntu' });
 
 export const metadata: Metadata = {
-  title: "My Next App", // Updated title for a more descriptive name
-  description: "This is my awesome Next.js app", // Updated description for clarity
+  title: "Launch Competitions", // Updated title for a more descriptive name
+  description: "Launch Competitions - competitions management platform", // Updated description for clarity
 };
 
 // RootLayout component that wraps the entire app

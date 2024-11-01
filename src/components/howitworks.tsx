@@ -30,7 +30,7 @@ const HowItWorks = ({ openModal }: any) => {
           {[
             {
               title: "Join Waiting List",
-              description: "Sign up today by entering your email, and be among the first to experience Ticzee's platform. Whether you want to host your own competitions or enter to win amazing prizes, we'll notify you as soon as we launch."
+              description: "Sign up today by entering your email, and be among the first to experience  Launch Competitions's platform. Whether you want to host your own competitions or enter to win amazing prizes, we'll notify you as soon as we launch."
             },
             {
               title: "Get Early Access.",
@@ -38,7 +38,7 @@ const HowItWorks = ({ openModal }: any) => {
             },
             {
               title: "Be the First to Know",
-              description: "We'll keep you updated with exciting news, sneak peeks, and tips on how to maximize your experience on Ticzee. Watch your inbox for insider updates!"
+              description: "We'll keep you updated with exciting news, sneak peeks, and tips on how to maximize your experience on  Launch Competitions. Watch your inbox for insider updates!"
             }
           ].map((item, index) => (
             <div key={index} className="mb-8 md:pl-8">
